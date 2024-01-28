@@ -21,21 +21,25 @@ public class GestorFicheroAleatorio {
         }
     }
 
-    public void visualizarFichero() throws IOException {
+    public String visualizarFichero() throws IOException {
+        StringBuilder contenido = new StringBuilder();
         try (RandomAccessFile file = new RandomAccessFile(filePath, "r")) {
             while (file.getFilePointer() < file.length()) {
                 Producto producto = leerProducto(file);
-                System.out.println(producto);
+                contenido.append(producto.toString()).append("\n");
             }
         }
+        return contenido.toString();
     }
 
-    public void visualizarProducto(int codProducto) throws IOException {
+    public String visualizarProducto(int codProducto) throws IOException {
+        StringBuilder productoInfo = new StringBuilder();
         try (RandomAccessFile file = new RandomAccessFile(filePath, "r")) {
             file.seek((codProducto - 1) * TAMANO_REGISTRO);
             Producto producto = leerProducto(file);
-            System.out.println(producto);
+            productoInfo.append(producto.toString());
         }
+        return productoInfo.toString();
     }
 
     public void modificarUnidades(int codProducto, int nuevasUnidades) throws IOException {
