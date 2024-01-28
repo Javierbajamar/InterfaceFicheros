@@ -1,10 +1,13 @@
 package ui;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -19,6 +22,8 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     private File archivoActual;
+
+    private RandomAccessController randomAccessController;
 
     @FXML
     private CheckBox carpetaCheck;
@@ -58,6 +63,21 @@ public class MainController implements Initializable {
 
     @FXML
     private TreeView<String> ficheroTree;
+
+    @FXML
+    private Button onFicherosAleatorios;
+
+    @FXML
+    private void handleFicherosAleatoriosAction() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/RandomAccessView.fxml"));
+            Parent randomAccessView = loader.load();
+            view.setCenter(randomAccessView); // 'view' es tu BorderPane
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Manejo de errores
+        }
+    }
 
 
     public MainController() {

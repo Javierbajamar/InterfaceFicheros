@@ -4,6 +4,7 @@ package ui;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
@@ -19,6 +20,10 @@ public class RandomAccessController {
     private TextField codigoFamiliaField;
     @FXML
     private TextArea resultArea;
+
+    @FXML
+    private BorderPane view;
+
 
     private GestorFicheroAleatorio gestorFichero;
 
@@ -74,5 +79,9 @@ public class RandomAccessController {
         } catch (NumberFormatException | IOException e) {
             resultArea.setText("Error al modificar unidades: " + e.getMessage());
         }
+    }
+
+    public BorderPane getView() {
+        return view;
     }
 }

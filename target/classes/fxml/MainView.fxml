@@ -22,29 +22,30 @@
           <ColumnConstraints hgrow="SOMETIMES" />
         </columnConstraints>
         <rowConstraints>
+          <RowConstraints />
           <RowConstraints vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" text="Ruta Actual" />
-            <TextField fx:id="rutaLabel" GridPane.columnIndex="1" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.rowIndex="1">
+            <Label alignment="CENTER" text="Ruta Actual" GridPane.rowIndex="1" />
+            <TextField fx:id="rutaLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.rowIndex="2">
                <children>
                   <Button fx:id="crearButton" mnemonicParsing="false" onAction="#onCreate" text="Crear" />
                   <Button fx:id="eliminarButton" mnemonicParsing="false" onAction="#onDelete" text="Eliminar" />
                   <Button fx:id="moverButton" mnemonicParsing="false" onAction="#onMove" text="Mover" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="45.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <CheckBox fx:id="carpetaCheck" mnemonicParsing="false" onAction="#onCarpetaCheck" text="Es carpeta" />
                   <CheckBox fx:id="ficheroCheck" mnemonicParsing="false" onAction="#onFicheroCheck" text="Es fichero" />
                </children>
             </HBox>
-            <TextField fx:id="carpetaficheroField" GridPane.columnSpan="2" GridPane.rowIndex="2">
+            <TextField fx:id="carpetaficheroField" GridPane.columnSpan="2" GridPane.rowIndex="3">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -52,19 +53,20 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
             </TextField>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="4.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="4.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
                <children>
                   <Button fx:id="fichcarpButton" mnemonicParsing="false" onAction="#onFicheroCarpeta" text="Ver ficheros y carpetas" />
                   <TreeView fx:id="ficheroTree" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
-            <VBox spacing="10.0" GridPane.rowIndex="4">
+            <VBox spacing="10.0" GridPane.rowIndex="5">
                <children>
                   <Button fx:id="modificarButton" mnemonicParsing="false" onAction="#onEditFichero" text="Modificar Fichero" />
                   <Button fx:id="contenidoButton" mnemonicParsing="false" onAction="#onContentFichero" text="Ver contenido Fichero" />
                </children>
             </VBox>
-            <TextArea fx:id="contentArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextArea fx:id="contentArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+             <Button fx:id="onFicherosAleatorios" text="Ficheros Aleatorios" onAction="#handleFicherosAleatoriosAction" />
          </children>
          <padding>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
