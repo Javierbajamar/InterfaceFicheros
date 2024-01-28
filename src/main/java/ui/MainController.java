@@ -93,6 +93,8 @@ public class MainController implements Initializable {
 
         if (selectedFile != null) {
             archivoActual = selectedFile;
+            rutaLabel.setText(selectedFile.getAbsolutePath()); // Actualizar la ruta en el TextField
+
             try {
                 String contenido = new String(Files.readAllBytes(selectedFile.toPath()));
                 contentArea.setText(contenido);
