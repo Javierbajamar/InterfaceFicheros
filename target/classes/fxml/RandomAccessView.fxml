@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<BorderPane maxHeight="600.0" maxWidth="400.0" minHeight="600.0" minWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tu.paquete.RandomAccessController">
+<BorderPane maxHeight="600.0" maxWidth="400.0" minHeight="600.0" minWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.RandomAccessController"
+>
    <center>
       <VBox alignment="CENTER" spacing="10.0">
           <Label text="Gestión de Ficheros Aleatorios" />

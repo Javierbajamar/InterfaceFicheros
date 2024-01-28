@@ -49,4 +49,14 @@ public class Producto {
     public void setCodigoFamilia(String codigoFamilia) {
         this.codigoFamilia = codigoFamilia;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "codProducto=" + codProducto +
+                ", nombreProducto='" + nombreProducto + '\'' +
+                ", unidades=" + unidades +
+                ", codigoFamilia='" + codigoFamilia + '\'' +
+                '}';
+    }
 }

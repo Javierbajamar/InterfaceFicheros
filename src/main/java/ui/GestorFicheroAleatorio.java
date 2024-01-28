@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.charset.StandardCharsets;
@@ -11,8 +12,21 @@ public class GestorFicheroAleatorio {
     private static final int TAMANO_REGISTRO = 30; // Ajusta según la estructura de tus datos
 
     public GestorFicheroAleatorio(String filePath) {
-        this.filePath = filePath;
+        this.filePath = System.getProperty("user.home") + File.separator + "miArchivo.dat";
+        inicializarArchivo();
     }
+
+    private void inicializarArchivo() {
+        try (RandomAccessFile file = new RandomAccessFile(filePath, "rw")) {
+            if (file.length() == 0) {
+                // Configuración inicial del archivo, si es necesario
+                // Por ejemplo, escribir una cabecera o datos iniciales
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void insertarProducto(Producto producto) throws IOException {
         try (RandomAccessFile file = new RandomAccessFile(filePath, "rw")) {
